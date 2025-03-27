@@ -42,7 +42,7 @@ func rest(timer *timer.Timer) string {
 }
 
 func sayAndNotify(reps int, s string) error {
-	for _ = range reps {
+	for range reps {
 		if err := mack.Say(s); err != nil {
 			return err
 		}
