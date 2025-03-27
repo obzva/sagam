@@ -1,0 +1,6 @@
+github.com/andybrewer/mack v0.0.0-20220307193339-22e922cc18af h1:PNE0xdyuLeOTujftqZs8DlhDoi+T54ONZhiGOxH5t2A=
+github.com/andybrewer/mack v0.0.0-20220307193339-22e922cc18af/go.mod h1:oUO968BJnuljnB5tntrY3w3zDfI5/PqnQ+RuiZ8aFhk=
+github.com/obzva/timer v0.0.0-20250327153049-484e23d44c93 h1:HEo3FUtGkD8xi4LW2U0uL9538wrAZBT86y96bbuGkpw=
+github.com/obzva/timer v0.0.0-20250327153049-484e23d44c93/go.mod h1:HxpWfWSe4aaEd8t1OhNVHY5FL9qc12dqg6VgbPWYOPw=
+github.com/obzva/timer v0.0.0-20250327163616-40eeb2c5f117 h1:vGt+t99mnBpsPile7ud1URqBJ75qdsQzoVZilo7Kcq0=
+github.com/obzva/timer v0.0.0-20250327163616-40eeb2c5f117/go.mod h1:HxpWfWSe4aaEd8t1OhNVHY5FL9qc12dqg6VgbPWYOPw=
