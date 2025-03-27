@@ -12,7 +12,7 @@ import (
 func main() {
 	sFlag := flag.Int("s", 25, "sprint duration in minutes, default is 25")
 	rFlag := flag.Int("r", 5, "rest duration in minutes, default is 5")
-	repFlag := flag.Int("rep", 3, "number of repetitions of alarm, default is 3")
+	repFlag := flag.Int("rep", 1, "number of repetitions of alarm, default is 3")
 	flag.Parse()
 
 	sprintDuration := time.Duration(*sFlag) * time.Minute

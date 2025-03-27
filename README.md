@@ -47,7 +47,7 @@ By running
 $ sagam -s [SPRINT_DURATION] -r [REST_DURATION] -rep [NUMBER_OF_REPETITION_OF_ALARM]
 # s  : sprint duration in minutes (defaults to 25)
 # r  : rest duration in minutes (defaults to 5)
-# rep: number of repetition of alarm and notification (defaults to 3)
+# rep: number of repetition of alarm and notification (defaults to 1)
 ```
 
 sagam will set timer for `SPRINT_DURATION` minutes of sprints and `REST_DURATION` of rests again and again.
