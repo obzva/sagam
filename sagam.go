@@ -52,7 +52,7 @@ func sayAndNotify(s string) error {
 }
 
 func formatMinute(d time.Duration) string {
-	res := fmt.Sprintf("%d minute", d)
+	res := fmt.Sprintf("%d minute", d/time.Minute)
 	if d > 1*time.Minute {
 		res += "s"
 	}
@@ -92,7 +92,7 @@ func Run(r io.Reader, w io.Writer, sprintDuration, restDuration time.Duration) e
 	for {
 		switch status {
 		case statusSprint:
-			if err := sayAndNotify(fmt.Sprintf("Sprint for %s", formatMinute(sprintDuration/time.Minute))); err != nil {
+			if err := sayAndNotify(fmt.Sprintf("Sprint for %s", formatMinute(sprintDuration))); err != nil {
 				return err
 			}
 			sprintCount++
@@ -101,7 +101,7 @@ func Run(r io.Reader, w io.Writer, sprintDuration, restDuration time.Duration) e
 			next := sprint(t)
 			status = next
 		case statusRest:
-			if err := sayAndNotify(fmt.Sprintf("Rest for %s", formatMinute(restDuration/time.Minute))); err != nil {
+			if err := sayAndNotify(fmt.Sprintf("Rest for %s", formatMinute(restDuration))); err != nil {
 				return err
 			}
 			fmt.Fprintf(w, "[%s] REST\n", time.Now().Format("15:04:05"))

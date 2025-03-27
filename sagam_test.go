@@ -27,6 +27,14 @@ func TestSprint(t *testing.T) {
 	assertString(t, got, statusRest)
 }
 
+func TestFormatMinute(t *testing.T) {
+	got := formatMinute(1 * time.Minute)
+	assertString(t, got, "1 minute")
+
+	got = formatMinute(37 * time.Minute)
+	assertString(t, got, "37 minutes")
+}
+
 func TestRest(t *testing.T) {
 	timer := timer.NewTimer(time.Nanosecond)
 	timer.Start()
