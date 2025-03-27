@@ -77,7 +77,7 @@ func Run(r io.Reader, w io.Writer, sprintDuration, restDuration time.Duration) e
 			switch command {
 			case "pause", "p":
 				t.Pause()
-				fmt.Fprintf(w, "[%s] timer paused: remaining %v\n", time.Now().Format("15:04:05"), t.Duration)
+				fmt.Fprintf(w, "[%s] timer paused: remaining %v\n", time.Now().Format("15:04:05"), t.Duration.Truncate(time.Second))
 			case "start", "s":
 				t.Start()
 				fmt.Fprintf(w, "[%s] timer started\n", time.Now().Format("15:04:05"))
