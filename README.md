@@ -1,6 +1,13 @@
 # sagam
 
-**Sagam** (사감, meaning *teacher who manages and coaches students in school dormitory* in Korean) is a CLI timer application for [pomodoro technique](https://en.wikipedia.org/wiki/Pomodoro_Technique).
+```
+ ▗▄▄▖ ▗▄▖  ▗▄▄▖ ▗▄▖ ▗▖  ▗▖
+▐▌   ▐▌ ▐▌▐▌   ▐▌ ▐▌▐▛▚▞▜▌
+ ▝▀▚▖▐▛▀▜▌▐▌▝▜▌▐▛▀▜▌▐▌  ▐▌
+▗▄▄▞▘▐▌ ▐▌▝▚▄▞▘▐▌ ▐▌▐▌  ▐▌
+```
+
+**Sagam** (사감, meaning _teacher who manages and coaches students in school dormitory_ in Korean) is a CLI timer application for [pomodoro technique](https://en.wikipedia.org/wiki/Pomodoro_Technique).
 
 **Sagam** is designed for OS X and uses [`mack`](https://github.com/andybrewer/mack) package to call applescript actions.
 
@@ -24,7 +31,7 @@ You set how long you will focus and how long you will rest.
 
 To install the `sagam` command, run
 
-``` bash
+```bash
 $ go install github.com/obzva/sagam/cmd/sagam@latest
 ```
 
