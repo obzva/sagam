@@ -41,12 +41,14 @@ func rest(timer *timer.Timer) string {
 	return statusSprint
 }
 
-func sayAndNotify(s string) error {
-	if err := mack.Say(s); err != nil {
-		return err
-	}
-	if err := mack.Notify(s, "Sagam"); err != nil {
-		return err
+func sayAndNotify(reps int, s string) error {
+	for _ = range reps {
+		if err := mack.Say(s); err != nil {
+			return err
+		}
+		if err := mack.Notify(s, "Sagam"); err != nil {
+			return err
+		}
 	}
 	return nil
 }
@@ -59,8 +61,8 @@ func formatMinute(d time.Duration) string {
 	return res
 }
 
-func Run(r io.Reader, w io.Writer, sprintDuration, restDuration time.Duration) error {
-	if err := sayAndNotify("Let's get started!"); err != nil {
+func Run(r io.Reader, w io.Writer, sprintDuration, restDuration time.Duration, reps int) error {
+	if err := sayAndNotify(reps, "Let's get started!"); err != nil {
 		return err
 	}
 	printOpening(w)
@@ -92,7 +94,7 @@ func Run(r io.Reader, w io.Writer, sprintDuration, restDuration time.Duration) e
 	for {
 		switch status {
 		case statusSprint:
-			if err := sayAndNotify(fmt.Sprintf("Sprint for %s", formatMinute(sprintDuration))); err != nil {
+			if err := sayAndNotify(reps, fmt.Sprintf("Sprint for %s", formatMinute(sprintDuration))); err != nil {
 				return err
 			}
 			sprintCount++
@@ -101,7 +103,7 @@ func Run(r io.Reader, w io.Writer, sprintDuration, restDuration time.Duration) e
 			next := sprint(t)
 			status = next
 		case statusRest:
-			if err := sayAndNotify(fmt.Sprintf("Rest for %s", formatMinute(restDuration))); err != nil {
+			if err := sayAndNotify(reps, fmt.Sprintf("Rest for %s", formatMinute(restDuration))); err != nil {
 				return err
 			}
 			fmt.Fprintf(w, "[%s] REST\n", time.Now().Format("15:04:05"))
